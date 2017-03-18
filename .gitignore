@@ -24,3 +24,6 @@ vendor/bundle
 
 # Ignore an image for dev env.
 Centos_v6.8.ova
+
+# Ignore note for myself.
+mote.md
