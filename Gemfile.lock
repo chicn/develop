@@ -125,7 +125,7 @@ GEM
       multi_json (~> 1.0)
       sprockets (>= 2.0.0)
       tilt (>= 1.2)
-    highline (1.7.8)
+    highline (1.6.21)
     htmlentities (4.3.4)
     i18n (0.8.1)
     i18n_data (0.7.0)
@@ -278,15 +278,15 @@ GEM
       thor (~> 0.14)
     sixarm_ruby_unaccent (1.1.1)
     slop (3.6.0)
-    solidus (2.1.0)
-      solidus_api (= 2.1.0)
-      solidus_backend (= 2.1.0)
-      solidus_core (= 2.1.0)
-      solidus_frontend (= 2.1.0)
-      solidus_sample (= 2.1.0)
-    solidus_api (2.1.0)
+    solidus (2.0.1)
+      solidus_api (= 2.0.1)
+      solidus_backend (= 2.0.1)
+      solidus_core (= 2.0.1)
+      solidus_frontend (= 2.0.1)
+      solidus_sample (= 2.0.1)
+    solidus_api (2.0.1)
       rabl (= 0.13.0)
-      solidus_core (= 2.1.0)
+      solidus_core (= 2.0.1)
       versioncake (~> 3.0)
     solidus_auth_devise (1.6.2)
       deface (~> 1.0.0)
@@ -295,7 +295,7 @@ GEM
       json
       multi_json
       solidus_core (>= 1.0.6, < 3)
-    solidus_backend (2.1.0)
+    solidus_backend (2.0.1)
       bourbon (>= 4, < 6)
       coffee-rails
       font-awesome-rails (~> 4.0)
@@ -304,9 +304,9 @@ GEM
       jquery-ui-rails (~> 5.0.0)
       sass-rails
       select2-rails (= 3.5.9.1)
-      solidus_api (= 2.1.0)
-      solidus_core (= 2.1.0)
-    solidus_core (2.1.0)
+      solidus_api (= 2.0.1)
+      solidus_core (= 2.0.1)
+    solidus_core (2.0.1)
       activemerchant (~> 1.48)
       acts_as_list (~> 0.3)
       awesome_nested_set (~> 3.0, >= 3.0.1)
@@ -314,7 +314,7 @@ GEM
       carmen (~> 1.0.0)
       ffaker (~> 2.0)
       friendly_id (~> 5.0)
-      highline (~> 1.7)
+      highline (~> 1.6.18)
       kaminari (~> 0.15, >= 0.15.1)
       monetize (~> 1.1)
       paperclip (~> 4.2)
@@ -327,16 +327,16 @@ GEM
       stringex (~> 1.5.1)
       truncate_html (~> 0.9, >= 0.9.2)
       twitter_cldr (~> 3.0)
-    solidus_frontend (2.1.0)
+    solidus_frontend (2.0.1)
       canonical-rails (~> 0.1.1)
       coffee-rails
       font-awesome-rails (~> 4.0)
       jquery-rails
       sass-rails
-      solidus_api (= 2.1.0)
-      solidus_core (= 2.1.0)
-    solidus_sample (2.1.0)
-      solidus_core (= 2.1.0)
+      solidus_api (= 2.0.1)
+      solidus_core (= 2.0.1)
+    solidus_sample (2.0.1)
+      solidus_core (= 2.0.1)
     spring (2.0.1)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -407,7 +407,7 @@ DEPENDENCIES
   rails-erd
   rspec-rails (~> 3.5)
   sass-rails (~> 5.0)
-  solidus
+  solidus (= 2.0.1)
   solidus_auth_devise
   solidus_i18n!
   spring

@@ -267,6 +267,16 @@ end
 #                                                             PUT    /admin/properties/:id(.:format)                                                     spree/admin/properties#update
 #                                                             DELETE /admin/properties/:id(.:format)                                                     spree/admin/properties#destroy
 #                                      admin_product_property DELETE /admin/product_properties/:id(.:format)                                             spree/admin/product_properties#destroy
+#                                      select_admin_prototype GET    /admin/prototypes/:id/select(.:format)                                              spree/admin/prototypes#select
+#                                  available_admin_prototypes GET    /admin/prototypes/available(.:format)                                               spree/admin/prototypes#available
+#                                            admin_prototypes GET    /admin/prototypes(.:format)                                                         spree/admin/prototypes#index
+#                                                             POST   /admin/prototypes(.:format)                                                         spree/admin/prototypes#create
+#                                         new_admin_prototype GET    /admin/prototypes/new(.:format)                                                     spree/admin/prototypes#new
+#                                        edit_admin_prototype GET    /admin/prototypes/:id/edit(.:format)                                                spree/admin/prototypes#edit
+#                                             admin_prototype GET    /admin/prototypes/:id(.:format)                                                     spree/admin/prototypes#show
+#                                                             PATCH  /admin/prototypes/:id(.:format)                                                     spree/admin/prototypes#update
+#                                                             PUT    /admin/prototypes/:id(.:format)                                                     spree/admin/prototypes#update
+#                                                             DELETE /admin/prototypes/:id(.:format)                                                     spree/admin/prototypes#destroy
 #                                            cart_admin_order GET    /admin/orders/:id/cart(.:format)                                                    spree/admin/orders#cart
 #                                         advance_admin_order PUT    /admin/orders/:id/advance(.:format)                                                 spree/admin/orders#advance
 #                                         confirm_admin_order GET    /admin/orders/:id/confirm(.:format)                                                 spree/admin/orders#confirm
@@ -444,6 +454,14 @@ end
 #                                                             PATCH  /admin/tax_rates/:id(.:format)                                                      spree/admin/tax_rates#update
 #                                                             PUT    /admin/tax_rates/:id(.:format)                                                      spree/admin/tax_rates#update
 #                                                             DELETE /admin/tax_rates/:id(.:format)                                                      spree/admin/tax_rates#destroy
+#                                              admin_trackers GET    /admin/trackers(.:format)                                                           spree/admin/trackers#index
+#                                                             POST   /admin/trackers(.:format)                                                           spree/admin/trackers#create
+#                                           new_admin_tracker GET    /admin/trackers/new(.:format)                                                       spree/admin/trackers#new
+#                                          edit_admin_tracker GET    /admin/trackers/:id/edit(.:format)                                                  spree/admin/trackers#edit
+#                                               admin_tracker GET    /admin/trackers/:id(.:format)                                                       spree/admin/trackers#show
+#                                                             PATCH  /admin/trackers/:id(.:format)                                                       spree/admin/trackers#update
+#                                                             PUT    /admin/trackers/:id(.:format)                                                       spree/admin/trackers#update
+#                                                             DELETE /admin/trackers/:id(.:format)                                                       spree/admin/trackers#destroy
 #                      update_positions_admin_payment_methods POST   /admin/payment_methods/update_positions(.:format)                                   spree/admin/payment_methods#update_positions
 #                                       admin_payment_methods GET    /admin/payment_methods(.:format)                                                    spree/admin/payment_methods#index
 #                                                             POST   /admin/payment_methods(.:format)                                                    spree/admin/payment_methods#create

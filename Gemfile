@@ -31,7 +31,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-gem 'solidus'
+gem 'solidus', '2.0.1'
 gem 'solidus_auth_devise'
 gem 'solidus_i18n', github: 'solidusio-contrib/solidus_i18n', branch: 'master'
 
@@ -58,7 +58,7 @@ group :development do
   gem 'pry'
   gem 'pry-rails'
   gem 'pry-byebug'
-  
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
