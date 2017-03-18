@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170224090053) do
+ActiveRecord::Schema.define(version: 20170318014122) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -196,7 +196,6 @@ ActiveRecord::Schema.define(version: 20170224090053) do
     t.decimal  "price",                precision: 10, scale: 2,                 null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "currency"
     t.decimal  "cost_price",           precision: 10, scale: 2
     t.integer  "tax_category_id"
     t.decimal  "adjustment_total",     precision: 10, scale: 2, default: "0.0"
@@ -336,15 +335,16 @@ ActiveRecord::Schema.define(version: 20170224090053) do
     t.string   "type"
     t.string   "name"
     t.text     "description"
-    t.boolean  "active",            default: true
+    t.boolean  "active",             default: true
     t.datetime "deleted_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "display_on"
     t.boolean  "auto_capture"
     t.text     "preferences"
     t.string   "preference_source"
-    t.integer  "position",          default: 0
+    t.integer  "position",           default: 0
+    t.boolean  "available_to_users", default: true
+    t.boolean  "available_to_admin", default: true
     t.index ["id", "type"], name: "index_spree_payment_methods_on_id_and_type"
   end
 
@@ -376,11 +376,10 @@ ActiveRecord::Schema.define(version: 20170224090053) do
   end
 
   create_table "spree_prices", force: :cascade do |t|
-    t.integer  "variant_id",                                                    null: false
+    t.integer  "variant_id",                                     null: false
     t.decimal  "amount",                precision: 10, scale: 2
     t.string   "currency"
     t.datetime "deleted_at"
-    t.boolean  "is_default",                                     default: true, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "country_iso", limit: 2
@@ -739,7 +738,6 @@ ActiveRecord::Schema.define(version: 20170224090053) do
 
   create_table "spree_shipping_methods", force: :cascade do |t|
     t.string   "name"
-    t.string   "display_on"
     t.datetime "deleted_at"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -747,9 +745,10 @@ ActiveRecord::Schema.define(version: 20170224090053) do
     t.string   "admin_name"
     t.integer  "tax_category_id"
     t.string   "code"
-    t.boolean  "available_to_all", default: true
+    t.boolean  "available_to_all",   default: true
     t.string   "carrier"
     t.string   "service_level"
+    t.boolean  "available_to_users", default: true
     t.index ["tax_category_id"], name: "index_spree_shipping_methods_on_tax_category_id"
   end
 
@@ -1008,13 +1007,6 @@ ActiveRecord::Schema.define(version: 20170224090053) do
     t.index ["permalink"], name: "index_taxons_on_permalink"
     t.index ["position"], name: "index_spree_taxons_on_position"
     t.index ["taxonomy_id"], name: "index_taxons_on_taxonomy_id"
-  end
-
-  create_table "spree_trackers", force: :cascade do |t|
-    t.string   "analytics_id"
-    t.boolean  "active",       default: true
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "spree_transfer_items", force: :cascade do |t|
