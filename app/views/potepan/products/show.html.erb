@@ -165,7 +165,7 @@
                   <div id="carousel" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                       <div class="item active" data-thumb="0">
-                        <%= image_tag("img/products/signle-product/product-slide-big-01.jpg") %>
+                        <%= image_tag(@image.attachment.url(:large), alt: "The item image will be shown here") %>
                       </div>
                     <!--   <div class="item" data-thumb="1">
                       <%= image_tag("img/products/signle-product/product-slide-big-02.jpg") %>
