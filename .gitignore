@@ -27,3 +27,7 @@ Centos_v6.8.ova
 
 # Ignore note for myself.
 note.md
+
+# Igonore .DS_Store
+**/.DS_Store
+
