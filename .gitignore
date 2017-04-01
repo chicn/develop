@@ -31,3 +31,5 @@ note.md
 # Igonore .DS_Store
 **/.DS_Store
 
+# Ignore .idea
+/.idea
