@@ -87,10 +87,8 @@
                     </div>
                   </div>
                   <div class="productCaption clearfix">
-                    <a href="single_product.html">
-                      <h5><%= products.name %></h5>
-                    </a>
-                    <h3><%= products.price %></h3>
+                    <%= link_to products.name, potepan_product_path(:id => products.id) %>
+                    <h3><%= products.price.to_i %><%= products.prices.last.currency %></h3>
                   </div>
                 </div>
               </div>
