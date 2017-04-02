@@ -1,0 +1,100 @@
+<!-- MAIN CONTENT SECTION -->
+<section class="mainContent clearfix productsContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-4 col-xs-12 sideBar">
+        <div class="panel panel-default">
+          <div class="panel-heading">商品カテゴリー</div>
+          <div class="panel-body">
+            <div class="collapse navbar-collapse navbar-ex1-collapse navbar-side-collapse">
+              <ul class="nav navbar-nav side-nav">
+                <% @prototypes.each do |p| %>
+                    <li>
+                      <a href="javascript:;" data-toggle="collapse" data-target="#SHOES">
+                        <%= p.name %>
+                        <i class="fa fa-plus"></i>
+                      </a>
+                      <ul id="SHOES" class="collapse collapseItem">
+                        <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>サブカテゴリー名 <span>(6)</span></a></li>
+                      </ul>
+                    </li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default priceRange">
+          <div class="panel-heading">値段から探す</div>
+          <div class="panel-body clearfix">
+            <div class="price-slider-inner">
+            <span class="amount-wrapper">
+              <input type="text" id="price-amount-1" readonly>
+                <strong>-</strong>
+              <input type="text" id="price-amount-2" readonly>
+            </span>
+              <div id="price-range"></div>
+            </div>
+            <input class="btn btn-default" type="submit" value="絞り込む">
+            <!-- <span class="priceLabel">Price: <strong>12 円- 30<円/strong></span> -->
+          </div>
+        </div>
+        <div class="panel panel-default filterNormal">
+          <div class="panel-heading">色から探す</div>
+          <div class="panel-body">
+            <ul class="list-unstyled">
+              <li><a href="#">ブラック<span>(15)</span></a></li>
+              <li><a href="#">ホワイト<span>(10)</span></a></li>
+              <li><a href="#">レッド<span>(7)</span></a></li>
+              <li><a href="#">ブルー<span>(12)</span></a></li>
+              <li><a href="#">オレンジ<span>(12)</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="panel panel-default filterNormal">
+          <div class="panel-heading">サイズから探す</div>
+          <div class="panel-body">
+            <ul class="list-unstyled clearfix">
+              <li><a href="#">S<span>(15)</span></a></li>
+              <li><a href="#">M<span>(10)</span></a></li>
+              <li><a href="#">L<span>(7)</span></a></li>
+              <li><a href="#">XL<span>(12)</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-9 col-sm-8 col-xs-12">
+        <div class="row filterArea">
+          <div class="col-xs-6">
+            <select name="guiest_id1" id="guiest_id1" class="select-drop">
+              <option value="0">並び替え</option>
+              <option value="1">人気順</option>
+              <option value="2">安い順</option>
+              <option value="3">新着順</option>
+              <option value="3">高い順</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <% @products.each do |product| %>
+              <div class="col-sm-4 col-xs-12">
+                <div class="productBox">
+                  <div class="productImage clearfix">
+                    <%= image_tag product.display_image.attachment(:mini) %>
+                    <div class="productMasking">
+                      <ul class="list-inline btn-group" role="group">
+                        <li><a data-toggle="modal" href=".quick-view" class="btn btn-default productView">VIEW</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="productCaption clearfix">
+                    <%= link_to product.name, potepan_product_path(product.id) %>
+                    <h3><%= product.price.to_i %><%= product.prices.last.currency %></h3>
+                  </div>
+                </div>
+              </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
