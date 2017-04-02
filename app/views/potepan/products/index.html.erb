@@ -75,11 +75,11 @@
           </div>
         </div>
         <div class="row">
-          <% @products.each do |products| %>
+          <% @products.each do |product| %>
               <div class="col-sm-4 col-xs-12">
                 <div class="productBox">
                   <div class="productImage clearfix">
-                    <%= image_tag("img/products/products-01.jpg", :alt => "products-img") %>
+                    <%= image_tag product.display_image.attachment(:mini) %>
                     <div class="productMasking">
                       <ul class="list-inline btn-group" role="group">
                         <li><a data-toggle="modal" href=".quick-view" class="btn btn-default productView">VIEW</a></li>
@@ -87,8 +87,8 @@
                     </div>
                   </div>
                   <div class="productCaption clearfix">
-                    <%= link_to products.name, potepan_product_path(:id => products.id) %>
-                    <h3><%= products.price.to_i %><%= products.prices.last.currency %></h3>
+                    <%= link_to product.name, potepan_product_path(product.id) %>
+                    <h3><%= product.price.to_i %><%= product.prices.last.currency %></h3>
                   </div>
                 </div>
               </div>

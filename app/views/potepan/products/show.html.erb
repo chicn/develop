@@ -8,7 +8,9 @@
             <div id="carousel" class="carousel slide" data-ride="carousel">
               <div class="carousel-inner">
                 <div class="item active" data-thumb="0">
-                  <%= image_tag(@image.attachment.url(:large), alt: "The item image will be shown here") %>
+                  <%#= image_tag(@image.attachment.url(:large), alt: "The item image will be shown here") %>
+                  <%= image_tag(@image, alt: "The item image will be shown here") %>
+
                 </div>
               <!--   <div class="item" data-thumb="1">
                 <%= image_tag("img/products/signle-product/product-slide-big-02.jpg") %>
@@ -28,9 +30,9 @@
               <li><a href="product_grid_left_sidebar.html"><i class="fa fa-reply" aria-hidden="true"></i>一覧ページへ戻る</a></li>
          <!-- <li><a href="#"><i class="fa fa-plus" aria-hidden="true"></i>Share This</a></li> -->
             </ul>
-            <h2><%= @products.name %></h2>
-            <h3><%= @products.price.to_i %><%= @products.prices.last.currency %></h3>
-            <p><%= @products.description %></p>
+            <h2><%= @product.name %></h2>
+            <h3><%= @product.price.to_i %><%= @product.prices.last.currency %></h3>
+            <p><%= @product.description %></p>
             <span class="quick-drop">
               <select name="guiest_id3" id="guiest_id3" class="select-drop">
                 <option value="0">S</option>
