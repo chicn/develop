@@ -6,7 +6,7 @@ class Potepan::ProductsController < ApplicationController
   end
 
   def show
-    @product = Spree::Product.find_by(params[:id])
+    @product = Spree::Product.find(params[:id])
     @image = @product.display_image.attachment(:small)
   end
 
