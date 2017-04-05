@@ -10,8 +10,6 @@ class Potepan::ProductsController < ApplicationController
     @image = @product.display_image.attachment(:small)
   end
 
-  # def show_category
-  # end
 
 
 end
