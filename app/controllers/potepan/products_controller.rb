@@ -1,15 +1,17 @@
 class Potepan::ProductsController < ApplicationController
 
   def index
-    @prototypes = Spree::Prototype.order('name asc')
-    @products = Spree::Product.all
+    @categories = Spree::Prototype.order('name asc')
+    if params.has_key?("category")
+      @products = Spree::Product.includes(:taxons)#.where("upper(spree_taxons.name) = ?", params[:category]).references(:taxons).includes(:prices)
+    else
+      @products = Spree::Product.all
+    end
   end
 
   def show
     @product = Spree::Product.find(params[:id])
     @image = @product.display_image.attachment(:small)
   end
-
-
 
 end
