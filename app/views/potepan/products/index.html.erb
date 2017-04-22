@@ -12,7 +12,7 @@
                 <% @categories.each do |c| %>
                     <li>
                       <a href="javascript:;" data-toggle="collapse" data-target="#SHOES">
-                        <%= link_to c.name, potepan_products_path(category: c.name) %>
+                        <%= link_to c.name, potepan_products_path(category: c.id) %>
                       </a>
                       <ul id="SHOES" class="collapse collapseItem">
                         <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>サブカテゴリー名 <span>(6)</span></a></li>
