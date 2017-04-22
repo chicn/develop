@@ -3,7 +3,14 @@ class Potepan::ProductsController < ApplicationController
   def index
     @categories = Spree::Prototype.order('name asc')
     if params.has_key?("category")
-      @products = Spree::Product.includes(:taxons)#.where("upper(spree_taxons.name) = ?", params[:category]).references(:taxons).includes(:prices)
+      temp = Spree::Product.all
+      @products = []
+      temp.each do |t|
+        if t.taxons[0].prototypes[0].id.to_s == params[:category]
+          @products << temp
+        end
+      end
+      # @products = Spree::Product.all
     else
       @products = Spree::Product.all
     end
