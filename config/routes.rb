@@ -10,6 +10,11 @@ Rails.application.routes.draw do
   get 'potepan/index'
   get 'potepan/product_grid_left_sidebar'
   get 'potepan/product_list_left_sidebar'
+
+  namespace :potepan do
+    resources :products
+  end
+
   get 'potepan/single_product'
   get 'potepan/cart_page'
   get 'potepan/blog_left_sidebar'
@@ -23,23 +28,34 @@ end
 
 # == Route Map
 #
-#                            Prefix Verb URI Pattern                                  Controller#Action
-#                             spree      /                                            Spree::Core::Engine
-#                     potepan_index GET  /potepan/index(.:format)                     potepan#index
-# potepan_product_grid_left_sidebar GET  /potepan/product_grid_left_sidebar(.:format) potepan#product_grid_left_sidebar
-# potepan_product_list_left_sidebar GET  /potepan/product_list_left_sidebar(.:format) potepan#product_list_left_sidebar
-#            potepan_single_product GET  /potepan/single_product(.:format)            potepan#single_product
-#                 potepan_cart_page GET  /potepan/cart_page(.:format)                 potepan#cart_page
-#         potepan_blog_left_sidebar GET  /potepan/blog_left_sidebar(.:format)         potepan#blog_left_sidebar
-#        potepan_blog_right_sidebar GET  /potepan/blog_right_sidebar(.:format)        potepan#blog_right_sidebar
-#  potepan_blog_single_left_sidebar GET  /potepan/blog_single_left_sidebar(.:format)  potepan#blog_single_left_sidebar
-# potepan_blog_single_right_sidebar GET  /potepan/blog_single_right_sidebar(.:format) potepan#blog_single_right_sidebar
-#                  potepan_about_us GET  /potepan/about_us(.:format)                  potepan#about_us
-#                 potepan_tokushoho GET  /potepan/tokushoho(.:format)                 potepan#tokushoho
-#            potepan_privacy_policy GET  /potepan/privacy_policy(.:format)            potepan#privacy_policy
+#                            Prefix Verb   URI Pattern                                  Controller#Action
+#                             spree        /                                            Spree::Core::Engine
+#                     potepan_index GET    /potepan/index(.:format)                     potepan#index
+# potepan_product_grid_left_sidebar GET    /potepan/product_grid_left_sidebar(.:format) potepan#product_grid_left_sidebar
+# potepan_product_list_left_sidebar GET    /potepan/product_list_left_sidebar(.:format) potepan#product_list_left_sidebar
+#                  potepan_products GET    /potepan/products(.:format)                  potepan/products#index
+#                                   POST   /potepan/products(.:format)                  potepan/products#create
+#               new_potepan_product GET    /potepan/products/new(.:format)              potepan/products#new
+#              edit_potepan_product GET    /potepan/products/:id/edit(.:format)         potepan/products#edit
+#                   potepan_product GET    /potepan/products/:id(.:format)              potepan/products#show
+#                                   PATCH  /potepan/products/:id(.:format)              potepan/products#update
+#                                   PUT    /potepan/products/:id(.:format)              potepan/products#update
+#                                   DELETE /potepan/products/:id(.:format)              potepan/products#destroy
+#            potepan_single_product GET    /potepan/single_product(.:format)            potepan#single_product
+#                 potepan_cart_page GET    /potepan/cart_page(.:format)                 potepan#cart_page
+#         potepan_blog_left_sidebar GET    /potepan/blog_left_sidebar(.:format)         potepan#blog_left_sidebar
+#        potepan_blog_right_sidebar GET    /potepan/blog_right_sidebar(.:format)        potepan#blog_right_sidebar
+#  potepan_blog_single_left_sidebar GET    /potepan/blog_single_left_sidebar(.:format)  potepan#blog_single_left_sidebar
+# potepan_blog_single_right_sidebar GET    /potepan/blog_single_right_sidebar(.:format) potepan#blog_single_right_sidebar
+#                  potepan_about_us GET    /potepan/about_us(.:format)                  potepan#about_us
+#                 potepan_tokushoho GET    /potepan/tokushoho(.:format)                 potepan#tokushoho
+#            potepan_privacy_policy GET    /potepan/privacy_policy(.:format)            potepan#privacy_policy
 #
 # Routes for Spree::Core::Engine:
 #                                                  set_locale POST   /locale/set(.:format)                                                               spree/locale#set {:format=>:json}
+#                                                admin_locale GET    /admin/locale(.:format)                                                             spree/admin/locales#show
+#                                                             PATCH  /admin/locale(.:format)                                                             spree/admin/locales#update
+#                                                             PUT    /admin/locale(.:format)                                                             spree/admin/locales#update
 #                                      new_spree_user_session GET    /user/spree_user/sign_in(.:format)                                                  spree/user_sessions#new
 #                                          spree_user_session POST   /user/spree_user/sign_in(.:format)                                                  spree/user_sessions#create
 #                                  destroy_spree_user_session GET    /user/spree_user/logout(.:format)                                                   spree/user_sessions#destroy
