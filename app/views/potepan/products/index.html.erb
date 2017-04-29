@@ -8,17 +8,18 @@
           <div class="panel-body">
             <div class="collapse navbar-collapse navbar-ex1-collapse navbar-side-collapse">
               <ul class="nav navbar-nav side-nav">
-                <% @prototypes.each do |p| %>
+
+                <% @categories.each do |c| %>
                     <li>
                       <a href="javascript:;" data-toggle="collapse" data-target="#SHOES">
-                        <%= p.name %>
-                        <i class="fa fa-plus"></i>
+                        <%= link_to c.name, potepan_products_path(category: c.id) %>
                       </a>
                       <ul id="SHOES" class="collapse collapseItem">
                         <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>サブカテゴリー名 <span>(6)</span></a></li>
                       </ul>
                     </li>
                 <% end %>
+
               </ul>
             </div>
           </div>
