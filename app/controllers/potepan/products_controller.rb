@@ -3,18 +3,9 @@ class Potepan::ProductsController < ApplicationController
   def index
     @categories = Spree::Prototype.order('name asc')
     if params.has_key?("category")
-      # temp = Spree::Product.all
-      # @products = []
-      # temp.each do |t|
-      #   if t.taxons[0].prototypes[0].id.to_s == params[:category]
-      #     @products << temp
-      #   end
-      # end
-binding.pry
-      @products = Spree::Product.includes(:prototypes).where("spree_prototypes.id = ?", params[:category]).references(:prototypes)
+      @products = Spree::Product.joins(:taxons => :prototypes).where(Spree::Prototype.arel_table[:id].eq(params[:category]))
     else
       @products = Spree::Product.all
-      binding.pry
     end
   end
 
